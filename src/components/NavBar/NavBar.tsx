@@ -1,3 +1,6 @@
+// Assets
+import styles from './Nav.module.css';
+
 // npm modules
 import { NavLink } from 'react-router-dom'
 
@@ -13,18 +16,25 @@ const NavBar = (props: NavBarProps): JSX.Element => {
   const { user, handleLogout } = props
   
   return (
-    <nav>
+    <nav className={styles.nav}>
       {user ?
         <ul>
-          <li>Welcome, {user.name}</li>
-          <li><NavLink to="/profiles">Profiles</NavLink></li>
-          <li><NavLink to="/change-password">Change Password</NavLink></li>
-          <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
+          <li><NavLink to="/">TableTop</NavLink></li>
+          <li>
+            <img 
+              className={styles.profImg} 
+              onClick={handleLogout} 
+              src={user.profile.photo} 
+            />
+          </li>
         </ul>
       :
         <ul>
-          <li><NavLink to="/login">Log In</NavLink></li>
-          <li><NavLink to="/signup">Sign Up</NavLink></li>
+        <li><NavLink to="/">TableTop</NavLink></li>
+          <li><NavLink to="/login"><img 
+              className={styles.profImg}
+              src='https://i.imgur.com/izJwDia.png' 
+            /></NavLink></li>
         </ul>
       }
     </nav>

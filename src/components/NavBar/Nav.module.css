@@ -1,0 +1,37 @@
+.nav a{
+  text-decoration: none;
+  color: black;
+}
+
+.nav ul{
+  list-style: none;
+  width: 100%;
+  padding:0 5px;
+  margin: 0;
+}
+
+.nav *{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.nav{
+  padding: 0 2vw;
+  height: 6vh;
+  background-color: darkgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profImg{
+  /* margin-top:5px; */
+  width: 40px;
+}
+
+.profImg:hover{
+  cursor: pointer;
+}
