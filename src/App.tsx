@@ -21,6 +21,7 @@ import './App.css'
 
 // types
 import { User } from './types/models'
+import SearchBar from './components/SearchBar/SearchBar'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
@@ -40,6 +41,7 @@ function App(): JSX.Element {
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
+      <SearchBar />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
