@@ -1,18 +1,20 @@
 //assets
 import styles from './SearchBar.module.css';
 
-//npm modules
-
-//types
+//services
+import * as bgaService from '../../services/bgaService'
 
 const SearchBar = (): JSX.Element =>{
 
+  async function handleSearch(){
+    
+  }
+
   return (
     <nav className={styles.searchBar}>
-      <h2>Search for a Game</h2>
       <div>
-        <input></input>
-        <button>Search</button>
+        <input placeholder="I'm searching for..." className={styles.input}></input>
+        <button onClick={handleSearch} className={styles.searchButton}>🔍️</button>
       </div>
       <p>Sort / Filter</p>
     </nav>
