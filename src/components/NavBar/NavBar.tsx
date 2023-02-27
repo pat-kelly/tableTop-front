@@ -24,7 +24,7 @@ const NavBar = (props: NavBarProps): JSX.Element => {
             <img 
               className={styles.profImg} 
               onClick={handleLogout} 
-              src={user.profile.photo} 
+              src={user.profile.photo ? user.profile.photo : 'https://i.imgur.com/izJwDia.png'} 
             />
           </li>
         </ul>
