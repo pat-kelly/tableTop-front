@@ -18,9 +18,11 @@ const GameCard = ({game}: GameCardProps): JSX.Element =>{
   
   return(
     <div className={styles.container}>
-      <img width='50px' src={game.photo}></img>
-      
-      <p>{game.name}</p>
+      <img src={game.photo}></img>
+      <div className={styles.rightPanel}>
+        <p className={styles.gameTitle}>{game.name}</p>
+        <p className={styles.desc}>{game.description}</p>
+      </div>
     </div>
   )
 }

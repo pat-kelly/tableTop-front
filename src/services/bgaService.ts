@@ -13,7 +13,7 @@ interface apiGame {
   id: string;
   name: string;
   msrp: number;
-  description: string;
+  description_preview: string;
   image_url: string;
   primary_publisher: publisher;
   players: string;
@@ -31,7 +31,7 @@ async function fetchGames(searchTerms: string): Promise<Game[]>{
       id: game.id,
       name: game.name,
       msrp: game.msrp,
-      description: game.description,
+      description: game.description_preview,
       photo: game.image_url,
       publisher: game.primary_publisher.name,
       players: game.players,
