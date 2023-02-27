@@ -19,14 +19,16 @@ interface LandingProps {
 
 const Landing = (props: LandingProps): JSX.Element => {
   const { user, gameList } = props;
-
-  // console.log(gameList);
   
   return (
     <main className={styles.container}>
       <ul>
         {gameList.map((game) =>{
-          return <GameCard game={game} />
+          return (
+            <li key={game.id}>
+              <GameCard game={game} />
+            </li>
+          )
         })}
       </ul>
     </main>

@@ -10,12 +10,18 @@ interface GameCardProps {
 
 const GameCard = ({game}: GameCardProps): JSX.Element =>{
 
-  console.log(game);
+  
+  /*
+  game has id, name, msrp, description, photo,
+  publisher, players, playtime
+  */
   
   return(
-    <>
-    
-    </>
+    <div className={styles.container}>
+      <img width='50px' src={game.photo}></img>
+      
+      <p>{game.name}</p>
+    </div>
   )
 }
 
