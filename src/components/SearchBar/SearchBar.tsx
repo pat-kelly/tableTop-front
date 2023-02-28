@@ -16,7 +16,6 @@ const SearchBar = (): JSX.Element =>{
         <input placeholder="I'm searching for..." className={styles.input}></input>
         <button onClick={handleSearch} className={styles.searchButton}>🔍️</button>
       </div>
-      <p>Sort / Filter</p>
     </nav>
   )
 }
