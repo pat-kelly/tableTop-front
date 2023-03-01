@@ -4,7 +4,7 @@ import styles from './SearchBar.module.css';
 //services
 import * as bgaService from '../../services/bgaService'
 import { Game } from '../../types/models';
-import { ChangeEvent, FormEvent, InputHTMLAttributes, useState } from 'react';
+import { ChangeEvent, FormEvent, InputHTMLAttributes, useEffect, useState } from 'react';
 
 interface searchProps{
   gameList: Game[];
@@ -17,8 +17,8 @@ const SearchBar = (props: searchProps): JSX.Element =>{
   
   async function handleFormSubmit(event:FormEvent){
     event.preventDefault();
-    console.log('searchTerms', searchTerms);
-    handleSearch(searchTerms);
+    const newTerms = searchTerms;
+    handleSearch(newTerms);
   }
 
   const updateSearchTerms = (evt: ChangeEvent<HTMLInputElement>) =>{
