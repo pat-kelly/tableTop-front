@@ -4,18 +4,24 @@ import { Game } from '../../types/models';
 import * as bgaService from '../../services/bgaService'
 import styles from './GameDetails.module.css'
 import { useEffect, useState } from 'react';
+import * as gameService from '../../services/gameService';
 
 interface GameDetailsProps {
   gameList: Game[];
 }
 
+
 const GameDetails = (props: GameDetailsProps): JSX.Element =>{
-  // const { user } = props;
+  
   const gameId = useParams();
-
   const curGame = props.gameList.find(game => game.id === gameId.id)
-  console.log(curGame);
-
+  
+  const handleAddGame = async() =>{
+    if(curGame){
+      const res = await gameService.addGame(curGame)
+      console.log('success?', res);
+    }    
+  }
 
   return (
     <div className={styles.main}>
@@ -32,7 +38,7 @@ const GameDetails = (props: GameDetailsProps): JSX.Element =>{
               </p>
               <p className={styles.desc}>{curGame.description}</p>
             </div>
-            <button>Add To Collection</button>
+            <button onClick={handleAddGame}>Add To Collection</button>
         </div>
       :
         <h4 className={styles.container}>Loading..</h4>
