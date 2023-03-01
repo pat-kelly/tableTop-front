@@ -39,12 +39,18 @@ function App(): JSX.Element {
       setGameList(initialGames);
     }
     gameList();
-  },[])
+  },[user])
 
   const handleLogout = (): void => {
     authService.logout()
     setUser(null)
     navigate('/')
+  }
+
+  const handleSearch = async(searchTerms: string): Promise<void> =>{
+    const gamesList = await bgaService.fetchGames(searchTerms);
+    console.log('searching...',gamesList);
+    setGameList(gamesList);
   }
 
   const handleAuthEvt = (): void => {
@@ -54,7 +60,7 @@ function App(): JSX.Element {
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
-      <SearchBar />
+      <SearchBar gameList={gameList} handleSearch={handleSearch}/>
       <Routes>
         <Route path="/" element={<Landing gameList={gameList} user={user} />} />
         <Route
