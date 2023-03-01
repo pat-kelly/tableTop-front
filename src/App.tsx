@@ -84,7 +84,9 @@ function App(): JSX.Element {
           path='/games/:id'
           element={
             <ProtectedRoute user={user}>
-              <GameDetails />
+              <GameDetails 
+                gameList = {gameList}
+              />
             </ProtectedRoute>
           }
         />

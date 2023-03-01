@@ -43,4 +43,15 @@ async function fetchGames(searchTerms: string): Promise<Game[]>{
   }
 }
 
-export { fetchGames }
+async function findGame(gameId: string): Promise<Game>{
+  try {
+    const res = await fetch(`${BASE_URL}ids=${gameId}`)
+    const json = await res.json();
+    console.log('back',json);
+    return json;
+  } catch (err) {
+    throw(err);
+  }
+}
+
+export { fetchGames, findGame }
