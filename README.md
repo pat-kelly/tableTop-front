@@ -1,15 +1,14 @@
-![Title Image](/src/assets/splash.png)
+![Title Image](/public/Assets/tableTop.png)
 
-### Blurby blurb about tableTop
+### TableTop will be built into a fully functioning TTRPG collection app, where you can save a list of  board games to play, and even find where they can be purchased.
 ---
 
-# [Launch TableTop](https://github.com/pat-kelly/tableTop-front)
+# [Launch TableTop](https://tabletop-pkelly.netlify.app/)
 
 
 > [Back end repository](https://github.com/pat-kelly/table-top-backEnd)
 
 
-![main page]()
 
 
 ### 🗜️ Technologies Used
@@ -24,9 +23,9 @@
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)<br />
 
 ### 🧊 Planned Features
-- [x]
-- [x]
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ] Fix all the things
+- [ ] Style all the things
+- [ ] Add loading splashes
+- [ ] Add Proper Landing Page
+- [ ] Add proper logout page
+- [ ] Style the login/logout pages
