@@ -1,5 +1,5 @@
 import { useParams } from 'react-router';
-import { User } from '../../types/models';
+import { Link } from 'react-router-dom';
 import { Game } from '../../types/models';
 import * as bgaService from '../../services/bgaService'
 import styles from './GameDetails.module.css'
@@ -18,9 +18,9 @@ const GameDetails = (props: GameDetailsProps): JSX.Element =>{
   
   const handleAddGame = async() =>{
     if(curGame){
-      const res = await gameService.addGame(curGame)
-      console.log('success?', res);
+      const res = await gameService.addGame(curGame);
     }    
+
   }
 
   return (
@@ -38,7 +38,7 @@ const GameDetails = (props: GameDetailsProps): JSX.Element =>{
               </p>
               <p className={styles.desc}>{curGame.description}</p>
             </div>
-            <button onClick={handleAddGame}>Add To Collection</button>
+            <button onClick={handleAddGame}><Link to='/games'>Add To Collection</Link></button>
         </div>
       :
         <h4 className={styles.container}>Loading..</h4>
