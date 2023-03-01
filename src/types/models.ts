@@ -3,6 +3,12 @@
 
 /* ---------===== board game models =====--------- */
 
+export interface shortGame {
+  name: string;
+  GA_id: string;
+  photo: string;
+  rating: number;
+}
 
 export interface Game {
   id: string;

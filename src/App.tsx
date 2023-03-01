@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import GameDetails from './pages/GameDetails/GameDetails'
+import CollectedGames from './pages/CollectedGames/CollectedGames'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -87,6 +88,14 @@ function App(): JSX.Element {
               <GameDetails 
                 gameList = {gameList}
               />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/games'
+          element={
+            <ProtectedRoute user={user}>
+              <CollectedGames />
             </ProtectedRoute>
           }
         />
