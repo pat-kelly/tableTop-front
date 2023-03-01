@@ -1,6 +1,11 @@
 /* ---------==== custom forms ====--------- */
 
-
+export interface EditGameForm {
+  name: string;
+  GA_id: string;
+  photo: string;
+  rating: number;
+}
 
 /* ---------===== auth forms =====--------- */
 

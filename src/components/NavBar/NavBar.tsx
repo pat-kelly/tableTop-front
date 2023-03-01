@@ -28,10 +28,11 @@ const NavBar = (props: NavBarProps): JSX.Element => {
             {user ?
               <li>
                 <NavLink className={styles.marginRight} to='/games'>My Games</NavLink>
+                {/* <NavLink className={styles.marginRight} to='/change-password'>Change Password</NavLink> */}
                 <img 
                   className={styles.profImg} 
                   onClick={handleLogout} 
-                  src={user.profile.photo}
+                  src={user.profile?.photo}
                 />
               </li>
             :

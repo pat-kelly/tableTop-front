@@ -67,4 +67,23 @@ async function delGame(gameId: string): Promise<void>{
   }
 }
 
-export { addGame, index, delGame }
+async function updateGame(game: shortGame): Promise<void>{
+  try {
+    console.log(game);
+    const res= await fetch(`${BASE_URL}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(game)
+    })
+    // console.log(await res.json());
+    return await res.json();
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+export { addGame, index, delGame, updateGame }

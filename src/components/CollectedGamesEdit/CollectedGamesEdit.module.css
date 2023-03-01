@@ -1,0 +1,25 @@
+.delButton{
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.editButton{
+  margin-right: 15px;
+  color: dark Grey;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.formContainer{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top:15px;
+}
+
+.formButton{
+  margin-top: 5px;
+}

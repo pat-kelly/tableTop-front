@@ -2,11 +2,16 @@ import { useState, useEffect } from 'react';
 import styles from './CollectedGames.module.css';
 import * as gameService from '../../services/gameService';
 import { Game, shortGame } from '../../types/models';
+import CollectedGamesEdit from '../../components/CollectedGamesEdit/CollectedGamesEdit';
 
 const CollectedGames = (): JSX.Element =>{
 
   const [userGames, setUserGames] = useState<shortGame[]>([])
+  const [editWindow, setEditWindow] = useState(false);
 
+  const handleEventWindow = ()=>{
+    setEditWindow(!editWindow);
+  }
 
   useEffect((): void =>{
     const gameList = async(): Promise<void> =>{
@@ -28,12 +33,7 @@ const CollectedGames = (): JSX.Element =>{
         {userGames ?
           userGames.map((game,idx) =>(
             <li key={idx}>
-              <div className={styles.gameContainer}>
-                <img src={game.photo}/>
-                <h3>{game.name}</h3>
-                <button onClick={(evt) => handleDeleteGame(evt, game.GA_id)}>X</button>
-              </div>
-              
+              <CollectedGamesEdit game={game} handleDeleteGame={handleDeleteGame}/>
             </li>
           ))
         :
