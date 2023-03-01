@@ -10,6 +10,8 @@ import * as bgaService from '../../services/bgaService';
 // Components=
 import GameCard from '../../components/GameCard/GameCard'
 
+import { Link } from 'react-router-dom' 
+
 interface LandingProps {
   user: User | null;
   gameList: Game[];
@@ -26,7 +28,9 @@ const Landing = (props: LandingProps): JSX.Element => {
         {gameList.map((game) =>{
           return (
             <li key={game.id}>
-              <GameCard game={game} />
+              <Link to={`/games/${game.id}`}>
+                <GameCard game={game} />
+              </Link>
             </li>
           )
         })}

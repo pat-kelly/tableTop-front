@@ -9,3 +9,12 @@ ul{
   margin:0;
   padding:0;
 }
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+li:hover{
+  background-color: rgba(0,0,0,.1);
+}
