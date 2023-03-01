@@ -7,6 +7,7 @@ const CollectedGames = (): JSX.Element =>{
 
   const [userGames, setUserGames] = useState<shortGame[]>([])
 
+
   useEffect((): void =>{
     const gameList = async(): Promise<void> =>{
       const initialGames: shortGame[] = await gameService.index();
@@ -14,7 +15,7 @@ const CollectedGames = (): JSX.Element =>{
       setUserGames(initialGames);
     }
     gameList();
-  },[])
+  })
 
   const handleDeleteGame =async (evt: React.MouseEvent<HTMLButtonElement, MouseEvent>, GA_id: string) => {
     const res = await gameService.delGame(GA_id);
