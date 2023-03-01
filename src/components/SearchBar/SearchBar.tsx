@@ -5,6 +5,7 @@ import styles from './SearchBar.module.css';
 import * as bgaService from '../../services/bgaService'
 import { Game } from '../../types/models';
 import { ChangeEvent, FormEvent, InputHTMLAttributes, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface searchProps{
   gameList: Game[];

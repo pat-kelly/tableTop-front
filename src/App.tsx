@@ -49,7 +49,6 @@ function App(): JSX.Element {
 
   const handleSearch = async(searchTerms: string): Promise<void> =>{
     const gamesList = await bgaService.fetchGames(searchTerms);
-    console.log('searching...',gamesList);
     setGameList(gamesList);
   }
 

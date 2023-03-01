@@ -26,7 +26,6 @@ async function fetchGames(searchTerms: string): Promise<Game[]>{
     const res = await fetch(`${BASE_URL}name=${searchTerms}&fuzzy_match=true`)
     
     const json = await res.json();
-    console.log(json);
     return await json.games.map((game: apiGame) => (
       {
         id: game.id,
