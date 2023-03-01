@@ -33,13 +33,18 @@
   transition: 500ms;
   /* position: relative; */
   scale: 1;
-  /* top:50px; */
-  height:100%;
+  top:50px;
+  /* height:100%; */
+}
+
+.topNav{
+  position: relative;
 }
 
 .hidden{
   scale: 0;
   /* top:-100px; */
+  /* visibility: hidden; */
   
 }
 
