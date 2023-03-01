@@ -27,6 +27,7 @@ const NavBar = (props: NavBarProps): JSX.Element => {
             </li> */}
             {user ?
               <li>
+                <NavLink className={styles.marginRight} to='/games'>My Games</NavLink>
                 <img 
                   className={styles.profImg} 
                   onClick={handleLogout} 

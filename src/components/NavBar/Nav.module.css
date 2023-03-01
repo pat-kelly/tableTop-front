@@ -26,6 +26,10 @@
   flex-direction: column;
 }
 
+.marginRight{
+  margin-right: 15px;
+}
+
 .subMenu{
   display:flex;
   justify-content: space-around;
